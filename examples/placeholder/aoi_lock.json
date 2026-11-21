@@ -1,0 +1,20 @@
+{
+  "locked_utc": "2026-11-21T19:59:47+00:00",
+  "files": {
+    "A": {
+      "file": "aois/A.json",
+      "sha256": "4258e7e1d924781b2efd9273a31e4de4ea92416ed17860ffb84df38e05aad532",
+      "modified_utc": "2026-11-21T19:59:47+00:00"
+    },
+    "B": {
+      "file": "aois/B.json",
+      "sha256": "b9c848a755431c37041a6477f3b8d5fbcc8001e80545c806c3147d309ec309d4",
+      "modified_utc": "2026-11-21T19:59:47+00:00"
+    },
+    "C": {
+      "file": "aois/C.json",
+      "sha256": "74b346e8c75f17130ff5207760b614b0474cd4b1d5cfae25105522dabf907421",
+      "modified_utc": "2026-11-21T19:59:47+00:00"
+    }
+  }
+}

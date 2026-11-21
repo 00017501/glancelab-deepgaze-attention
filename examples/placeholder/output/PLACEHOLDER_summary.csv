@@ -1,0 +1,7 @@
+variant,centerbias,entropy_norm,clarity,top10_pct,first_look_order
+A,mit1003,0.8058,0.1942,78.3391,headline > price > logo > product
+A,uniform,0.7979,0.2021,83.2353,price > logo > headline > product
+B,mit1003,0.8033,0.1967,78.9245,headline > price > logo > product
+B,uniform,0.7933,0.2067,84.3397,price > logo > headline > product
+C,mit1003,0.781,0.219,84.1282,price > headline > product > logo
+C,uniform,0.7948,0.2052,84.0396,price > logo > headline > product

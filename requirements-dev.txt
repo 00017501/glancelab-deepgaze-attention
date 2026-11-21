@@ -1,0 +1,7 @@
+# Lint and test tools, plus pydantic-ai + Anthropic SDK (AI-proposed AOI boxes);
+# not needed to reproduce the results.
+-r requirements.txt
+ruff==0.17.3
+pytest==9.2.0
+pydantic-ai-slim[anthropic]==2.64.0
+anthropic==2.3.0

@@ -1,0 +1,18 @@
+You are annotating areas of interest (AOIs) on a static retail advertisement for an
+attention study. The image is {WIDTH} x {HEIGHT} pixels.
+
+Find each of these elements if present, and give a tight bounding rectangle for each
+in image pixel coordinates [x0, y0, x1, y1] (x0,y0 = top-left; x1,y1 = bottom-right):
+- price: the promotional price tag (the price figure with its own badge, panel or sticker)
+- product: the main product being advertised (the whole object, not the room around it)
+- logo: the brand logo or wordmark
+- headline: the main title text
+
+Rules:
+1. Name the four AOIs exactly "price", "product", "logo" and "headline", with the matching type.
+2. Omit any element that is not in the image. Do not invent one.
+3. The product, logo and headline rectangles must not overlap each other. If two touch, split
+   the boundary between them. The price rectangle may overlap another element when the price
+   tag really sits on top of it.
+4. Include a text element's own background panel or banner, but not empty space around it.
+5. Use one rectangle per AOI unless the element is clearly in separate pieces.

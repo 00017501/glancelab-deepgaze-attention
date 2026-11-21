@@ -1,0 +1,40 @@
+# The real study. Put the ad variants in images/ and one AOI file per variant in aois/.
+# Step-by-step: docs/ANALYSIS_GUIDE.md. All outputs are predicted attention, not real eye-tracking.
+
+title = "Promo price position"
+placeholder = false
+
+# Variant every other variant is compared against (the image file name without extension).
+baseline = "A"
+
+# The one AOI that moves between variants, and the AOI the key test protects.
+moving_aoi = "price"
+product_aoi = "product"
+# AOIs listed here win overlapping pixels, in this order.
+aoi_priority = ["price"]
+
+# Flag a variant when its product share falls by more than this % of the baseline product share.
+product_drop_threshold_pct = 10
+
+# Robustness check: each box edge moves by up to this % of the box size, this many times.
+jitter_pct = 5
+jitter_draws = 200
+jitter_seed = 20261122
+
+centerbias_path = "centerbias_mit1003.npy"
+
+# Tools whose numbers are exported by hand; each gets empty rows in cross_tool_long.csv.
+# Edit the names, metrics and scales to match what each tool actually exports.
+[[external_tools]]
+name = "attention_insight"
+metrics = [
+  { metric = "attention_pct", level = "aoi", scale = "0-100 % of attention" },
+  { metric = "clarity_score", level = "image", scale = "0-100" },
+]
+
+[[external_tools]]
+name = "neurons_predict"
+metrics = [
+  { metric = "attention_pct", level = "aoi", scale = "0-100 % of attention" },
+  { metric = "clarity_score", level = "image", scale = "0-100" },
+]

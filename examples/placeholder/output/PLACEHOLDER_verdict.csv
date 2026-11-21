@@ -1,0 +1,5 @@
+variant,baseline,centerbias,price_share_pct,price_delta_pp,is_price_up,product_share_pct,product_delta_rel_pct,product_density_delta_rel_pct,threshold_pct,is_product_held,verdict
+B,A,mit1003,15.4089,-0.7199,False,12.2029,2.8409,2.8409,10.0,True,price share not up; product held
+B,A,uniform,29.3401,1.833,True,4.6522,-1.6501,-1.6501,10.0,True,price share up; product held
+C,A,mit1003,37.8871,21.7583,True,11.505,-3.0408,3.8934,10.0,True,price share up; product held
+C,A,uniform,28.9687,1.4616,True,6.7232,42.1301,52.2948,10.0,True,price share up; product held

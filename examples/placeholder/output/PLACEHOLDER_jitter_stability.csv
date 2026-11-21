@@ -1,0 +1,7 @@
+centerbias,check,unchanged_pct,draws
+mit1003,price_share_order,100.0,200
+mit1003,product_drop_flag:B,100.0,200
+mit1003,product_drop_flag:C,97.5,200
+uniform,price_share_order,98.5,200
+uniform,product_drop_flag:B,100.0,200
+uniform,product_drop_flag:C,100.0,200

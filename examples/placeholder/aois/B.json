@@ -1,0 +1,50 @@
+{
+  "_note": "PLACEHOLDER AOIs written by the placeholder generator. Boxes are [x0, y0, x1, y1] in pixels.",
+  "image": "B.png",
+  "aois": {
+    "price": {
+      "type": "price",
+      "boxes": [
+        [
+          778,
+          68,
+          1016,
+          203
+        ]
+      ]
+    },
+    "logo": {
+      "type": "logo",
+      "boxes": [
+        [
+          65,
+          68,
+          281,
+          162
+        ]
+      ]
+    },
+    "headline": {
+      "type": "headline",
+      "boxes": [
+        [
+          65,
+          216,
+          864,
+          324
+        ]
+      ]
+    },
+    "product": {
+      "type": "product",
+      "boxes": [
+        [
+          216,
+          486,
+          864,
+          1026
+        ]
+      ]
+    }
+  }
+}
