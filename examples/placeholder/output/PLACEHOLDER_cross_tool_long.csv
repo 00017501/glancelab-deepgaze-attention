@@ -22,8 +22,6 @@ deepgaze_iie,A,product,first_look_rank,4.0,1 = AOI with the highest peak density
 deepgaze_iie,A,rest,attention_pct,18.8631,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,rest,area_pct,66.4852,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,rest,attention_density,0.2837,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,A,rest,aoi_rank,,1 = AOI with the highest attention %,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,A,rest,first_look_rank,,1 = AOI with the highest peak density (not a scanpath),2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,price,attention_pct_no_centerbias,27.5071,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,price,area_pct_no_centerbias,2.2037,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,price,attention_density_no_centerbias,12.4822,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
@@ -47,8 +45,6 @@ deepgaze_iie,A,product,first_look_rank_no_centerbias,4.0,1 = AOI with the highes
 deepgaze_iie,A,rest,attention_pct_no_centerbias,20.0098,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,rest,area_pct_no_centerbias,66.4852,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,rest,attention_density_no_centerbias,0.301,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,A,rest,aoi_rank_no_centerbias,,1 = AOI with the highest attention %,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,A,rest,first_look_rank_no_centerbias,,1 = AOI with the highest peak density (not a scanpath),2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,price,attention_pct,15.4089,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,price,area_pct,2.2037,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,price,attention_density,6.9923,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
@@ -72,8 +68,6 @@ deepgaze_iie,B,product,first_look_rank,4.0,1 = AOI with the highest peak density
 deepgaze_iie,B,rest,attention_pct,17.9145,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,rest,area_pct,66.4852,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,rest,attention_density,0.2695,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,B,rest,aoi_rank,,1 = AOI with the highest attention %,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,B,rest,first_look_rank,,1 = AOI with the highest peak density (not a scanpath),2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,price,attention_pct_no_centerbias,29.3401,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,price,area_pct_no_centerbias,2.2037,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,price,attention_density_no_centerbias,13.314,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
@@ -97,8 +91,6 @@ deepgaze_iie,B,product,first_look_rank_no_centerbias,4.0,1 = AOI with the highes
 deepgaze_iie,B,rest,attention_pct_no_centerbias,18.7849,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,rest,area_pct_no_centerbias,66.4852,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,B,rest,attention_density_no_centerbias,0.2825,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,B,rest,aoi_rank_no_centerbias,,1 = AOI with the highest attention %,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,B,rest,first_look_rank_no_centerbias,,1 = AOI with the highest peak density (not a scanpath),2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,price,attention_pct,37.8871,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,price,area_pct,2.2037,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,price,attention_density,17.1925,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
@@ -122,8 +114,6 @@ deepgaze_iie,C,product,first_look_rank,3.0,1 = AOI with the highest peak density
 deepgaze_iie,C,rest,attention_pct,12.5955,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,rest,area_pct,68.087,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,rest,attention_density,0.185,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,C,rest,aoi_rank,,1 = AOI with the highest attention %,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,C,rest,first_look_rank,,1 = AOI with the highest peak density (not a scanpath),2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,price,attention_pct_no_centerbias,28.9687,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,price,area_pct_no_centerbias,2.2037,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,price,attention_density_no_centerbias,13.1455,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
@@ -147,8 +137,6 @@ deepgaze_iie,C,product,first_look_rank_no_centerbias,4.0,1 = AOI with the highes
 deepgaze_iie,C,rest,attention_pct_no_centerbias,16.9849,0-100 % of predicted attention,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,rest,area_pct_no_centerbias,68.087,0-100 % of image area,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,C,rest,attention_density_no_centerbias,0.2495,attention % per area %; 1 = proportional to size,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,C,rest,aoi_rank_no_centerbias,,1 = AOI with the highest attention %,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
-deepgaze_iie,C,rest,first_look_rank_no_centerbias,,1 = AOI with the highest peak density (not a scanpath),2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,(image),clarity,0.1942,0-1; higher = more focused (1 - normalised entropy),2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,(image),entropy_norm,0.8058,0-1; lower = more focused,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0
 deepgaze_iie,A,(image),top10_pct,78.3391,0-100 % of attention in the top 10 % of pixels,2026-11-21,PLACEHOLDER deepgaze@c7db17e pipeline@0.1.0

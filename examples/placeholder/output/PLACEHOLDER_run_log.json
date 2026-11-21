@@ -3,11 +3,11 @@
   "status": "finished",
   "is_placeholder": true,
   "study_title": "PLACEHOLDER price-position study",
-  "run_utc": "2026-11-21T19:59:47+00:00",
+  "run_utc": "2026-11-21T20:06:12+00:00",
   "run_date": "2026-11-21",
   "pipeline_version": "0.1.0",
-  "git_commit": "a0d9840ac1c76f7fed18b7597ea376b609f82d1a",
-  "is_git_dirty": true,
+  "git_commit": "a22b52746ae79151ea902ebd7c098e5dd6c2ed68",
+  "is_git_dirty": false,
   "model": "DeepGaze IIE",
   "deepgaze_commit": "c7db17e2d1d7ea6468ffdee2cfaddf141095dcff",
   "weights_file": "deepgaze2e.pth",
@@ -75,5 +75,10 @@
   },
   "aoi_set_sha256": "464c4e1081b6b702a3b889a895f5e67cc5cdc62d5f2e0281bf0ddb78cf091c95",
   "has_aois_changed_since_a_run": false,
-  "past_runs": []
+  "past_runs": [
+    {
+      "run_utc": "2026-11-21T19:59:47+00:00",
+      "aoi_set_sha256": "464c4e1081b6b702a3b889a895f5e67cc5cdc62d5f2e0281bf0ddb78cf091c95"
+    }
+  ]
 }
