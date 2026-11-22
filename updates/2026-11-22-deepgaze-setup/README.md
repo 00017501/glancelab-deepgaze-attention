@@ -148,4 +148,13 @@ If the three tools agree, that is a stronger finding than any one of them. If th
 
 Once I have the images, the DeepGaze side should take under an hour, including checking the boxes.
 
+## Setting it up yourself
+
+You can also run it on your own laptop (macOS or Linux). Everything is in the repository:
+
+- Setup instructions: <https://github.com/00017501/glancelab-deepgaze-attention#readme>
+- Step-by-step guide, with an example of what every step produces: <https://github.com/00017501/glancelab-deepgaze-attention/blob/main/docs/ANALYSIS_GUIDE.md>
+
+Follow the setup first, then go through the guide. It includes the dummy images, so you can try the whole thing before the real ads exist.
+
 Reference: Linardos, A., Kümmerer, M., Press, O., & Bethge, M. (2021). DeepGaze IIE: Calibrated prediction in and out-of-domain for state of the art saliency modeling. *ICCV 2021*.
