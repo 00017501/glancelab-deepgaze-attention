@@ -101,3 +101,4 @@ recorded as one entry.
 
 | Date | Request (summarised) | What the AI did | Human check |
 |---|---|---|---|
+| 2026-11-22 | Make the pipeline's commands shorter to type | Claude Code (`claude-fable-5-2`) wrote `justfile`, which only wraps the existing commands, and updated the command examples in the docs. No pipeline code, metric or output changed | To be recorded here by the student when reviewed |

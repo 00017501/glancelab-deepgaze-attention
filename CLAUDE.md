@@ -21,6 +21,8 @@ library. Code conventions: [.claude/rules/python.md](.claude/rules/python.md).
 .venv/bin/python -m src.glance_attention <preview|validate|run|compare|report> --study <folder>
 ```
 
+`justfile` wraps these: `just check`, `just demo`, `just <preview|validate|run|compare|report> [study]`.
+
 ## Map
 
 - `src/glance_attention/`: `cli` → `pipeline` (run, compare, report) → `validate`, `model`, `stats`,

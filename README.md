@@ -69,6 +69,18 @@ $P aoi apply A --study data                       # adopt a reviewed proposal as
 $P run --skip-model --study data                  # recompute tables and images from saved densities
 ```
 
+With [`just`](https://github.com/casey/just) installed (`brew install just`), the same commands
+are shorter; the study folder is an optional argument (default `data`):
+
+```bash
+just                      # list every recipe
+just preview              # likewise validate, run, compare, report
+just analyse              # run, compare and report in one go (validate and commit the lock first)
+just aoi-propose A        # then: just aoi-apply A
+just demo                 # the whole placeholder flow
+just check                # lint and fast tests
+```
+
 To swap in the real ads, follow [docs/ANALYSIS_GUIDE.md](docs/ANALYSIS_GUIDE.md). No code changes
 are needed: replace the files and edit `study.toml`.
 
