@@ -55,7 +55,7 @@ The plan the student approved is summarised by the decisions D0-D13 in
 
 ### 2a. How it runs
 
-`python -m src.glance_attention aoi propose <variant> --study data` sends one image and the prompt
+`just aoi-propose <variant>` sends one image and the prompt
 below to Claude and saves the proposal and an audit record (model requested and used, effort, SDK
 versions, prompt text and hash, image hash, request ID, token counts, the raw reply, any box
 problems) in `provenance/aois/`. Nothing is adopted until `aoi apply`. See
@@ -101,5 +101,5 @@ recorded as one entry.
 | Date | Request (summarised) | What the AI did | Human check |
 |---|---|---|---|
 | 2026-11-22 | Make the pipeline's commands shorter to type | Claude Code (`claude-fable-5-2`) wrote `justfile`, which only wraps the existing commands, and updated the command examples in the docs. No pipeline code, metric or output changed | To be recorded here by the student when reviewed |
-| 2026-11-22 | Make the analysis guide easier to follow: show what each step produces | Claude Code (`claude-fable-5-2`) rewrote `docs/ANALYSIS_GUIDE.md` as a step-by-step guide with the placeholder images and table excerpts. Documentation only | To be recorded here by the student when reviewed |
+| 2026-11-22 | Make the documentation easier to follow: show what each step produces and add example images | Claude Code (`claude-fable-5-2`) rewrote `docs/ANALYSIS_GUIDE.md` as a step-by-step guide with the placeholder images and table excerpts, and added example images to `README.md`. Documentation only | To be recorded here by the student when reviewed |
 | 2026-11-22 | Make clearer what the study does and does not claim, after a group member asked which of three readings was meant | Claude Code (`claude-fable-5-2`) reworded the research-question framing in `README.md` and `docs/METHOD.md` (section 0) and added D14 to `docs/DECISIONS.md`. Wording only; no metric or output changed | To be recorded here by the student when reviewed |

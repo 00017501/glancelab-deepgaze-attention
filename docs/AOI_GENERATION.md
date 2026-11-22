@@ -4,7 +4,7 @@
 
 AOIs must be fixed before any heatmap is generated. The order below keeps it that way.
 
-`P` stands for `.venv/bin/python -m src.glance_attention`.
+Commands are `just` recipes (see the `justfile`); the study folder defaults to `data`.
 
 ## AOI file format
 
@@ -33,7 +33,7 @@ One file per variant, `aois/<variant>.json`:
 1. Export `ANTHROPIC_API_KEY` in your own terminal. It is never written to any file.
 2. Baseline first:
    ```bash
-   $P aoi propose A --study data
+   just aoi-propose A
    ```
    This writes `provenance/aois/data__A.json` (the proposal) and `data__A.meta.json` (the audit
    record). It never overwrites an earlier proposal.
@@ -41,12 +41,12 @@ One file per variant, `aois/<variant>.json`:
    for the log in [AI_USE_AND_PROMPTS.md](AI_USE_AND_PROMPTS.md) section 2c.
 4. Adopt it:
    ```bash
-   $P aoi apply A --study data
+   just aoi-apply A
    ```
 5. Repeat `propose` and `apply` for each other variant. For these, `apply` takes **only the price
    box** from the proposal and copies product, logo and headline from the baseline's file.
-6. `$P preview --study data`, and check every image in `data/output/preview/`.
-7. `$P validate --study data` locks the files. Commit.
+6. `just preview`, and check every image in `data/output/preview/`.
+7. `just validate` locks the files. Commit.
 
 `apply` refuses to replace an existing AOI file and refuses boxes that fail the checks.
 
@@ -65,6 +65,6 @@ that tool's product value then includes the price pixels, unlike here (D4).
 
 ## Placeholders
 
-`$P placeholder --study examples/placeholder` writes the images and the AOI files from the same
+`just placeholder` writes the images and the AOI files from the same
 coordinates. No AI is involved, and the command refuses to write into a study that is not marked
 `placeholder = true`.

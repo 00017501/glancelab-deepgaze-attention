@@ -14,14 +14,15 @@ library. Code conventions: [.claude/rules/python.md](.claude/rules/python.md).
 ## Commands
 
 ```bash
-./setup.sh                                   # environment (safe to rerun)
-.venv/bin/ruff format src tests && .venv/bin/ruff check src tests
-.venv/bin/pytest -m "not slow"               # seconds, no model
-.venv/bin/pytest -m slow                     # real model
-.venv/bin/python -m src.glance_attention <preview|validate|run|compare|report> --study <folder>
+just setup                                   # environment (safe to rerun)
+just check                                   # ruff format, ruff check, fast tests
+just test-slow                               # real model
+just <preview|validate|run|compare|report> [study]   # study folder defaults to data
+just demo                                    # whole placeholder flow
 ```
 
-`justfile` wraps these: `just check`, `just demo`, `just <preview|validate|run|compare|report> [study]`.
+`just` lists every recipe. Underneath each is
+`.venv/bin/python -m src.glance_attention <command> --study <folder>`.
 
 ## Map
 
