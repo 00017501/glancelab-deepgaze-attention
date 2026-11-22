@@ -53,4 +53,4 @@ library. Code conventions: [.claude/rules/python.md](.claude/rules/python.md).
 - Edit an existing entry in `docs/DECISIONS.md`; add a correcting entry instead.
 - Change an AOI file after a model run without recording why.
 - Remove or weaken the PLACEHOLDER marking or the "not real eye-tracking" caveat.
-- Add personal names or local file paths anywhere; the author is the student ID.
+- Add personal names or local file paths anywhere.

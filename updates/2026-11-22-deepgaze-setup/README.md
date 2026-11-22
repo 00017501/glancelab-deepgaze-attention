@@ -28,7 +28,14 @@ It is the same kind of prediction the commercial tools sell. The difference is t
 
 ## How it works for our study
 
-Our question: **where should the promo price go so it is noticed, without taking attention away from the product?** We test versions of one ad that are identical except for the price position.
+Our question: **where should the promo price go so it is noticed and remembered, without reducing attention on the product?** We test versions of one ad that are identical except for the price position.
+
+To be clear about what that means:
+
+- **It is a placement decision with a trade-off.** Version A has the price in the usual position and is our baseline. The other versions move the price to positions we expect to draw more attention to it.
+- **The winner is not the version with the loudest price.** It is the version where the price gains attention while the product keeps its share. A price that pulls focus away from the furniture is a bad result too.
+- **We are not claiming the price is under-noticed in the real ads today.** We have no data on those. Version A is only the reference point we compare against.
+- **It is a planned test, not trial and error.** The versions, the areas we measure and the pass mark for the product are all fixed before we run anything.
 
 **1. The ad versions go in.** One image per version, all the same size. Version A is the baseline (the usual price position). The dummy ones:
 

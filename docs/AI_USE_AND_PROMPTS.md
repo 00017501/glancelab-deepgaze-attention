@@ -36,8 +36,7 @@ Each question came with options and the AI's recommendation. The student chose.
 | 3 | "A variant gets flagged when product attention falls too far below baseline A. How should 'too far' be measured?" | "Relative drop in share" (recommended) | D7 |
 | 4 | "DeepGaze adds a centre bias (people tend to look at the middle), so a price moved toward the centre gains share from that prior alone. Since position is exactly what you vary, how should the pipeline treat it?" | "Both, MIT1003 primary" (recommended) | D6 |
 | 5 | "The shared cross-tool CSV gets empty template rows for Attention Insight and Neurons/Expoze. [...] Which rows should the template contain for the other tools?" | "Listed in config" (recommended) | D12 |
-| 6 | "This is group coursework but the repo must carry student IDs only. Whose ID(s) go in LICENSE, README and the docs as the author?" | "00017501 only" (recommended) | D0 |
-| 7 | "The empty `glancelab-deepgaze-attention` repo is where I plan to build [...]. How should I handle git while building?" | "Commit and push" | – |
+| 6 | "The empty `glancelab-deepgaze-attention` repo is where I plan to build [...]. How should I handle git while building?" | "Commit and push" | – |
 
 Points the AI raised unprompted, which shaped the design: the centre bias is confounded with
 position (D6); clarity will barely differ between variants; heatmaps scaled per image are not
@@ -103,3 +102,4 @@ recorded as one entry.
 |---|---|---|---|
 | 2026-11-22 | Make the pipeline's commands shorter to type | Claude Code (`claude-fable-5-2`) wrote `justfile`, which only wraps the existing commands, and updated the command examples in the docs. No pipeline code, metric or output changed | To be recorded here by the student when reviewed |
 | 2026-11-22 | Make the analysis guide easier to follow: show what each step produces | Claude Code (`claude-fable-5-2`) rewrote `docs/ANALYSIS_GUIDE.md` as a step-by-step guide with the placeholder images and table excerpts. Documentation only | To be recorded here by the student when reviewed |
+| 2026-11-22 | Make clearer what the study does and does not claim, after a group member asked which of three readings was meant | Claude Code (`claude-fable-5-2`) reworded the research-question framing in `README.md` and `docs/METHOD.md` (section 0) and added D14 to `docs/DECISIONS.md`. Wording only; no metric or output changed | To be recorded here by the student when reviewed |

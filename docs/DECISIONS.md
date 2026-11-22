@@ -8,13 +8,12 @@ corrects. All values produced by this repository are predicted attention, not re
 **Decision.** This repository is the DeepGaze IIE part of a group coursework (CW2) that tests where
 the promo price tag should sit on a static furniture ad. It produces numbers for one shared
 cross-tool table; the other two tools are commercial and exported by hand.
-**Identity.** The repository contains no personal names and no local file paths. Authorship is the
-student ID 00017501.
+**Identity.** The repository contains no personal names and no local file paths.
 
 ### D1 – Start from the earlier DeepGaze pipeline (2026-11-22)
 
 **Decision.** Reuse the model runner, the AOI share, entropy and peak maths, the heatmap rendering,
-the pinned environment and the AI AOI-proposal helper from the author's earlier single-image
+the pinned environment and the AI AOI-proposal helper from an earlier single-image
 DeepGaze coursework pipeline. Rebuild everything that depends on the scenario.
 **Carried over unchanged.** DeepGaze IIE at commit `c7db17e`, the patch that makes the unused
 `deepgazemsdb` import optional (it needs a package this model does not use), Python 3.13, the pinned
@@ -124,3 +123,16 @@ order or entropy. A full grid would be mostly empty for ever.
 **Decision.** Inference runs on the CPU, with no device option.
 **Why.** Numbers must be reproducible on the machine that produced them; other devices can differ in
 the last digits. Three images under two priors take about half a minute.
+
+### D14 – What the study claims (2026-11-22)
+
+**Decision.** The study is framed as a placement decision with a trade-off: which price position
+gains predicted attention for the price while the product keeps its share. Version A (conventional
+position) is the baseline; the other versions are positions expected to draw more attention.
+**Not claimed.** That the price is currently under-noticed in the advertiser's real ads (there is no
+data on them), or that more attention on the price is good regardless of the product.
+**Why.** A group member asked which of three readings was meant: the current price is too little
+noticed; the price should be made more noticeable whatever the baseline; or versions are tried to
+see which is best. It is none of the first two, and the third only in a structured form: versions,
+AOIs and the product threshold are fixed before the model runs (D5, D7).
+**Effect.** Wording only. No metric, threshold or output changes.

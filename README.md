@@ -2,8 +2,18 @@
 
 Predicted attention for several versions (A, B, C, ...) of one static furniture ad that are identical
 except for where the promo price tag sits. Research question: *where should the promo price go so it
-is noticed and remembered, without reducing attention on the product?* Version A is the conventional
-placement and the baseline.
+is noticed and remembered, without reducing attention on the product?*
+
+This is a placement decision with a trade-off, tested in a structured way:
+
+- Version A is the conventional price position and the baseline. The other versions move the price
+  to positions expected to draw more attention to it.
+- The best version is the one where the price gains predicted attention **while the product keeps
+  its share**. A price that pulls attention off the product counts as a bad result, however much
+  attention the price itself gets.
+- The study does **not** claim that the price is under-noticed in the advertiser's current ads:
+  there is no data on those. A is a reference point for the comparison, not a diagnosis.
+- This tool speaks to *noticed* only. *Remembered* needs the group's other evidence.
 
 > **Caveat.** Every number and heatmap here is *predicted* free-viewing attention from DeepGaze IIE
 > (Linardos et al., 2021). They are not eye-tracking measurements of real viewers, and they say
@@ -16,8 +26,6 @@ placement and the baseline.
 DeepGaze is one of three attention tools in the group project (CW2). The other two are commercial and
 their numbers are exported by hand; this pipeline writes one long-format table
 (`cross_tool_long.csv`) with the DeepGaze rows filled in and empty rows for the other tools.
-
-Author: student ID 00017501.
 
 ## Layout
 

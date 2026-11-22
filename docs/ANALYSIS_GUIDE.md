@@ -343,7 +343,7 @@ In the placeholder study every output file name starts with `PLACEHOLDER_`.
 - Never change an AOI file after looking at a heatmap. If a box is truly wrong, fix it, re-validate,
   rerun, and explain it in [DECISIONS.md](DECISIONS.md); the run log will show the change.
 - Never copy anything from `examples/placeholder/` into the report.
-- No personal names or local file paths in the repository; the author is the student ID.
-- Git identity for commits is the student ID and its GitHub noreply address.
+- No personal names or local file paths in the repository, including in the git identity used for
+  commits.
 - Disclose every AI-assisted step in [AI_USE_AND_PROMPTS.md](AI_USE_AND_PROMPTS.md) with its exact
   prompt.

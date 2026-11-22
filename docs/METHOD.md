@@ -5,6 +5,25 @@
 
 Decisions are referenced as D1, D2, ... and explained in [DECISIONS.md](DECISIONS.md).
 
+## 0. What is being tested
+
+Research question: where should the promo price go so it is noticed and remembered, without reducing
+attention on the product?
+
+This is a placement decision with a trade-off (D14):
+
+- **A comparison against a baseline, not a diagnosis.** Version A has the price in the conventional
+  position. The other versions move it to positions expected to draw more attention. Every result is
+  a difference from A. Nothing here says whether the price is noticed too little in the
+  advertiser's current ads; there is no data on those.
+- **Two conditions, both required.** A version is better than A only if the price's share of
+  predicted attention goes up **and** the product's share is held (D7). Maximising attention
+  on the price alone is not the goal: a price that takes attention from the product fails.
+- **Chosen in advance.** The versions, the AOIs and the threshold are fixed before the model runs,
+  so the comparison is a planned test and not a search through variations for a good-looking number.
+- **Noticed, not remembered.** The model predicts where people look. The *remembered* half of the
+  question is outside what it can show (section 6).
+
 ## 1. Stimuli
 
 Three or more versions of one static ad. They are identical except for the position of the promo
