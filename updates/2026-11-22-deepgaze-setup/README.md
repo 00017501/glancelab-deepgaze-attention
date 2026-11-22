@@ -2,6 +2,8 @@
 
 From: 00017501
 
+Repository: <https://github.com/00017501/glancelab-deepgaze-attention> (branch `cw2-pipeline`)
+
 ## In short
 
 - **DeepGaze IIE is set up and working.** It runs on my laptop, and the whole analysis has been tested end to end on dummy images.
