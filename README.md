@@ -1,146 +1,98 @@
-# Price-position attention study: DeepGaze IIE pipeline
+# Where should the promo price go?
 
-Predicted attention for several versions (A, B, C, ...) of one static furniture ad that are identical
-except for where the promo price tag sits. Research question: *where should the promo price go so it
-is noticed and remembered, without reducing attention on the product?*
+**Research question:** where should the promo price go on a furniture ad so that it is noticed and remembered, without reducing attention on the product?
 
-This is a placement decision with a trade-off, tested in a structured way:
+We test several versions of one ad that are identical except for the position of the price tag. Version A has the price in the usual place and is the baseline. The best version is the one where the price gets more attention **while the product keeps its share**.
 
-- Version A is the conventional price position and the baseline. The other versions move the price
-  to positions expected to draw more attention to it.
-- The best version is the one where the price gains predicted attention **while the product keeps
-  its share**. A price that pulls attention off the product counts as a bad result, however much
-  attention the price itself gets.
-- The study does **not** claim that the price is under-noticed in the advertiser's current ads:
-  there is no data on those. A is a reference point for the comparison, not a diagnosis.
-- This tool speaks to *noticed* only. *Remembered* needs the group's other evidence.
+This repository is the DeepGaze IIE part of a group coursework (CW2). DeepGaze is a free research model that predicts where people are likely to look at an image. Two commercial tools are used alongside it, and all three feed one shared table.
 
-> **Caveat.** Every number and heatmap here is *predicted* free-viewing attention from DeepGaze IIE
-> (Linardos et al., 2021). They are not eye-tracking measurements of real viewers, and they say
-> nothing about memory, viewing goals or the context the ad appears in.
+> **Predicted attention, not real eye-tracking.** Every number and heatmap here comes from a model. It says nothing about memory or about real viewers.
 
-> **Status.** The real ads do not exist yet. The only outputs in this repository come from generated
-> grey-box images in [`examples/placeholder/`](examples/placeholder/). Every one of them is marked
-> **PLACEHOLDER – not results** and must never be reported.
+> **No results yet.** The real ads do not exist yet. Every picture below is from grey-box placeholder images, marked **PLACEHOLDER – not results**.
 
-DeepGaze is one of three attention tools in the group project (CW2). The other two are commercial and
-their numbers are exported by hand; this pipeline writes one long-format table
-(`cross_tool_long.csv`) with the DeepGaze rows filled in and empty rows for the other tools.
+More: [what the study does and does not claim](docs/METHOD.md) · [why each choice was made](docs/DECISIONS.md)
 
-## What it looks like
+## What you get
 
-The pictures below are from the placeholder study (grey boxes, not ads). They show what the pipeline
-produces; they are not results.
+**All versions side by side.** Brighter means more predicted attention. Each box shows its share of it.
 
-**All versions side by side, on one colour scale.** Brighter means more predicted attention; each
-box shows its share of it.
+![Placeholder panel: versions A, B and C side by side with boxes and shares](examples/placeholder/output/PLACEHOLDER_panel.png)
 
-![Placeholder panel: versions A, B and C side by side with AOI boxes and shares](examples/placeholder/output/PLACEHOLDER_panel.png)
+**For each version:** the image, the areas we measure, the predicted heatmap, and the share of attention in each area.
 
-**The steps for one version**: the image, the AOI boxes fixed before the model runs, the predicted
-heatmap, and the heatmap with each box's share.
-
-| 1. Image | 2. AOI boxes (`just preview`) | 3. Heatmap (`just run`) | 4. Shares per AOI |
+| 1. Image | 2. Areas to measure | 3. Heatmap | 4. Share per area |
 |:---:|:---:|:---:|:---:|
-| <img src="examples/placeholder/images/C.png" width="200" alt="Placeholder version C"> | <img src="examples/placeholder/output/preview/PLACEHOLDER_C_aois.png" width="200" alt="AOI boxes drawn on placeholder version C"> | <img src="examples/placeholder/output/heatmaps/PLACEHOLDER_C_heatmap.png" width="200" alt="Predicted heatmap for placeholder version C"> | <img src="examples/placeholder/output/heatmaps/PLACEHOLDER_C_aoi.png" width="200" alt="Heatmap with AOI boxes and shares for placeholder version C"> |
+| <img src="examples/placeholder/images/C.png" width="200" alt="Placeholder version C"> | <img src="examples/placeholder/output/preview/PLACEHOLDER_C_aois.png" width="200" alt="Boxes drawn on placeholder version C"> | <img src="examples/placeholder/output/heatmaps/PLACEHOLDER_C_heatmap.png" width="200" alt="Predicted heatmap for placeholder version C"> | <img src="examples/placeholder/output/heatmaps/PLACEHOLDER_C_aoi.png" width="200" alt="Heatmap with boxes and shares for placeholder version C"> |
 
-**The key test** (`just compare`): against baseline A, did the price gain attention and did the
-product keep its share? Placeholder values:
+**The answer to the question**, version by version against the baseline (placeholder values):
 
 | Version | Price share | Change vs A | Product change vs A | Verdict |
 |---|---|---|---|---|
-| B | 15.4% | −0.7 points | +2.8% | price share not up; product held |
-| C | 37.9% | +21.8 points | −3.0% | price share up; product held |
+| B | 15.4% | −0.7 points | +2.8% | price not up; product held |
+| C | 37.9% | +21.8 points | −3.0% | price up; product held |
 
-Every step with an example of its output: [docs/ANALYSIS_GUIDE.md](docs/ANALYSIS_GUIDE.md).
+It also writes the tables behind these, a written summary, and the shared table for all three tools.
 
-## Layout
+More: [every output explained, with examples](docs/ANALYSIS_GUIDE.md) · [how each number is calculated](docs/METHOD.md)
 
-| Path | What it is |
+## Set it up
+
+You need Python 3.13, git and [`just`](https://github.com/casey/just) (a small tool that gives the commands short names).
+
+| System | What to do |
 |---|---|
-| `src/glance_attention/` | The pipeline and its command line |
-| `examples/placeholder/` | Placeholder study: generated images, AOI files and marked outputs |
-| `data/` | The real study goes here: `study.toml`, `images/`, `aois/` |
-| `prompts/aoi/annotation.txt` | Prompt used when an AI proposes AOI boxes |
-| `provenance/aois/` | AI AOI proposals and their audit records |
-| `docs/` | [METHOD](docs/METHOD.md), [DECISIONS](docs/DECISIONS.md), [AI_USE_AND_PROMPTS](docs/AI_USE_AND_PROMPTS.md), [ANALYSIS_GUIDE](docs/ANALYSIS_GUIDE.md), [AOI_GENERATION](docs/AOI_GENERATION.md) |
-| `justfile` | Short commands for everything below |
-| `setup.sh`, `requirements*.txt`, `patches/` | Pinned environment |
-| `tests/` | Tests; all but one run without the model |
-
-A **study** is a folder holding `study.toml`, `images/` and `aois/`. Each image file is one variant,
-named by its file name (`A.png` is variant `A`), with a matching `aois/A.json`. Nothing in the code
-names a variant, a file or an image size.
-
-## Setup (macOS or Linux, CPU, Python 3.13)
-
-Commands are run with [`just`](https://github.com/casey/just), a small command runner
-(`brew install just`).
+| macOS | `brew install just python@3.13`, then the commands below |
+| Linux | Install Python 3.13, git and `just` with your package manager, then the commands below |
+| Windows | Install WSL (`wsl --install` in PowerShell), open Ubuntu, then follow the Linux steps inside it |
 
 ```bash
-just setup        # venv, pinned packages, DeepGaze at a pinned commit, dev tools (safe to rerun)
-just test         # seconds, no model
-just test-slow    # runs the real model once
+git clone https://github.com/00017501/glancelab-deepgaze-attention.git
+cd glancelab-deepgaze-attention
+just setup    # installs everything; takes a few minutes
+just demo     # runs the whole thing on the placeholder images
 ```
 
-The first model run downloads the pretrained weights (1-2 GB) into the torch cache.
+The first run downloads the model (about 1 GB). It has been run on macOS only so far.
 
-## Use
+More: [setup step by step for each system](docs/SETUP.md)
 
-`just` on its own lists every command. Each one takes the study folder as an optional last argument;
-the default is `data`, the real study.
+## Use it
 
-```bash
-just preview      # draw the AOI boxes on the images; list them in pixels and %
-just validate     # check images and AOIs, then lock the AOIs
-just run          # run the model; needs locked AOIs
-just compare      # deltas against the baseline and the key test
-just report       # report.md and cross_tool_long.csv
-```
-
-```bash
-just analyse                     # run, compare and report in one go (validate and commit the lock first)
-just run examples/placeholder    # any command on another study folder
-just demo                        # the whole placeholder flow, start to finish
-```
-
-Helpers:
-
-```bash
-just aoi-propose A    # an AI proposes AOI boxes for variant A (needs ANTHROPIC_API_KEY)
-just aoi-apply A      # adopt a reviewed proposal as aois/A.json
-just rerun            # recompute tables and images from saved model output, without the model
-just placeholder      # regenerate the placeholder images and AOI files
-just check            # format, lint and fast tests
-```
-
-Without `just`: run `./setup.sh` and `.venv/bin/pip install -r requirements-dev.txt`, then each
-command is `.venv/bin/python -m src.glance_attention <command> --study <folder>` (`aoi propose A`
-and `run --skip-model` for the helpers).
-
-To swap in the real ads, follow [docs/ANALYSIS_GUIDE.md](docs/ANALYSIS_GUIDE.md). No code changes
-are needed: replace the files and edit `study.toml`.
-
-## What comes out (`<study>/output/`)
-
-| File | Content |
+| Command | What it does |
 |---|---|
-| `heatmaps/<variant>_heatmap.png`, `<variant>_aoi.png` | Heatmap, and heatmap with AOI boxes and shares |
-| `panel.png`, `panel_no_centerbias.png` | All variants side by side on one colour scale |
-| `<variant>_aoi.csv`, `summary.csv` | Per-AOI and whole-image metrics, both priors |
-| `compare.csv`, `verdict.csv` | Deltas against the baseline; price-up / product-held test |
-| `jitter.csv`, `jitter_stability.csv` | Robustness to slightly different AOI boxes |
-| `cross_tool_long.csv` | `tool, variant, aoi, metric, value, scale, run_date, version` |
-| `report.md` | Everything above in one readable page |
-| `run_log.json` | Model version, settings, image and AOI hashes, date, commit |
-| `preview/` | AOI boxes on the plain images, and `aoi_boxes.csv` in pixels and % |
+| `just preview` | Draws the measured areas on each image so you can check them |
+| `just validate` | Checks the images and areas, then locks the areas |
+| `just run` | Runs the model and makes the heatmaps and tables |
+| `just compare` | Compares every version with the baseline |
+| `just report` | Writes the summary and the shared table |
+| `just demo` | Does all of the above on the placeholder images |
 
-Metric definitions are in [docs/METHOD.md](docs/METHOD.md).
+`just` on its own lists every command. The areas are locked before the model runs, so no box can be adjusted after a heatmap has been seen.
 
-## Licence and references
+More: [using it on the real ads, step by step](docs/ANALYSIS_GUIDE.md) · [making the area files](docs/AOI_GENERATION.md)
+
+## What is where
+
+| Folder | What is in it |
+|---|---|
+| `data/` | The real study: put the ad images and area files here |
+| `examples/placeholder/` | The placeholder study and its example outputs |
+| `docs/` | The guides and the method |
+| `updates/` | Status updates for the group |
+| `src/`, `tests/` | The code and its tests |
+
+Results land in an `output/` folder inside the study: `data/output/` for the real ads.
+
+More: [which file comes from which step](docs/ANALYSIS_GUIDE.md#where-everything-ends-up)
+
+## AI use
+
+Parts of this repository were built with AI assistance, and an AI can propose the measured areas for a person to check. Every such step is listed.
+
+More: [AI use and prompts](docs/AI_USE_AND_PROMPTS.md)
+
+## Licence and reference
 
 MIT, see [LICENSE](LICENSE).
 
-- Linardos, A., Kümmerer, M., Press, O. and Bethge, M. (2021) 'DeepGaze IIE: Calibrated prediction
-  in and out-of-domain for state-of-the-art saliency modeling', *ICCV 2021*.
-- DeepGaze code: https://github.com/matthias-k/DeepGaze (pinned commit in `setup.sh`).
+Linardos, A., Kümmerer, M., Press, O. and Bethge, M. (2021) 'DeepGaze IIE: Calibrated prediction in and out-of-domain for state-of-the-art saliency modeling', *ICCV 2021*. Code: <https://github.com/matthias-k/DeepGaze>

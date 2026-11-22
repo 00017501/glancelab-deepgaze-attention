@@ -31,7 +31,7 @@ just demo                                    # whole placeholder flow
   `annotate/` are helpers.
 - `examples/placeholder/`: generated study; all outputs marked PLACEHOLDER.
 - `data/`: the real study.
-- `docs/`: METHOD, DECISIONS, AI_USE_AND_PROMPTS, ANALYSIS_GUIDE, AOI_GENERATION.
+- `docs/`: METHOD, DECISIONS, AI_USE_AND_PROMPTS, ANALYSIS_GUIDE, AOI_GENERATION, SETUP.
 
 ## Always
 
