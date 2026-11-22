@@ -1,8 +1,6 @@
 # CW2 update: attention tools (22 November 2026)
 
-From: 00017501
-
-Repository: <https://github.com/00017501/glancelab-deepgaze-attention> (branch `cw2-pipeline`)
+Repository: <https://github.com/00017501/glancelab-deepgaze-attention>
 
 ## In short
 
