@@ -51,6 +51,34 @@ moves. Everything outside the boxes counts as "rest".
 
 <img src="img/PLACEHOLDER_A_aois.png" width="300" alt="The four AOI boxes drawn on dummy version A">
 
+For the real ads, an AI model (Claude) proposes the boxes from the image, and a person checks every
+box by eye and corrects it before it is accepted. For the versions other than the baseline, only the
+price box is taken from the AI; the other boxes are copied from the baseline so they stay identical.
+This is the exact prompt it is given (the image size is filled in automatically):
+
+```text
+You are annotating areas of interest (AOIs) on a static retail advertisement for an
+attention study. The image is {WIDTH} x {HEIGHT} pixels.
+
+Find each of these elements if present, and give a tight bounding rectangle for each
+in image pixel coordinates [x0, y0, x1, y1] (x0,y0 = top-left; x1,y1 = bottom-right):
+- price: the promotional price tag (the price figure with its own badge, panel or sticker)
+- product: the main product being advertised (the whole object, not the room around it)
+- logo: the brand logo or wordmark
+- headline: the main title text
+
+Rules:
+1. Name the four AOIs exactly "price", "product", "logo" and "headline", with the matching type.
+2. Omit any element that is not in the image. Do not invent one.
+3. The product, logo and headline rectangles must not overlap each other. If two touch, split
+   the boundary between them. The price rectangle may overlap another element when the price
+   tag really sits on top of it.
+4. Include a text element's own background panel or banner, but not empty space around it.
+5. Use one rectangle per AOI unless the element is clearly in separate pieces.
+```
+
+This is an AI-assisted step, so it has to be disclosed in the report together with this prompt.
+
 The boxes are fixed and locked **before** the model runs, and the tool refuses to run if they are
 changed afterwards. This matters for the report: nobody can say we moved a box after seeing a
 heatmap to get a nicer number.
@@ -125,7 +153,7 @@ Attention Insight and the third tool are there but empty, ready to type their nu
 | deepgaze_iie | A | price | attention_pct | 16.13 | 0-100 % of predicted attention |
 | attention_insight | A | price | attention_pct | | 0-100 % of attention |
 
-There is also a written summary (`report.md`) and a run record (model version, settings, date) for
+There is also a written summary of the results and a run record (model version, settings, date) for
 the appendix.
 
 ## How we use it together with the other tools
@@ -161,12 +189,6 @@ is also worth reporting.
    real run.
 
 Once I have the images, the DeepGaze side should take under an hour, including checking the boxes.
-
-## Where things are
-
-- Step-by-step guide with examples of every output: [docs/ANALYSIS_GUIDE.md](../../docs/ANALYSIS_GUIDE.md)
-- Method and limitations: [docs/METHOD.md](../../docs/METHOD.md)
-- All dummy outputs: [examples/placeholder/output/](../../examples/placeholder/output/)
 
 Reference: Linardos, A., Kümmerer, M., Press, O., & Bethge, M. (2021). DeepGaze IIE: Calibrated
 prediction in and out-of-domain for state of the art saliency modeling. *ICCV 2021*.
