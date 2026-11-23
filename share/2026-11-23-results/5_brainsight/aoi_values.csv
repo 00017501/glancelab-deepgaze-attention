@@ -1,0 +1,16 @@
+variant,aoi,box_label,attention_pct,source
+A,price,Box 1,10,screenshots/A_result_aois.jpg
+A,product,Box 2,28,screenshots/A_result_aois.jpg
+A,logo,Box 3,4,screenshots/A_result_aois.jpg
+A,headline,Box 4,20,screenshots/A_result_aois.jpg
+A,tagline,Box 5,9,screenshots/A_result_aois.jpg
+B,price,Box 1,12,screenshots/B_result_aois.jpg
+B,product,Box 2,27,screenshots/B_result_aois.jpg
+B,logo,Box 3,4,screenshots/B_result_aois.jpg
+B,headline,Box 4,17,screenshots/B_result_aois.jpg
+B,tagline,Box 5,10,screenshots/B_result_aois.jpg
+C,price,Box 1,13,screenshots/C_result_aois.jpg
+C,product,Box 2,28,screenshots/C_result_aois.jpg
+C,logo,Box 3,4,screenshots/C_result_aois.jpg
+C,headline,Box 4,16,screenshots/C_result_aois.jpg
+C,tagline,Box 5,10,screenshots/C_result_aois.jpg

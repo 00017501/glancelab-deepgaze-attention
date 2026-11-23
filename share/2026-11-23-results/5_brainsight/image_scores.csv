@@ -1,0 +1,4 @@
+variant,attention_score,clarity_score,benchmark,source
+A,17,56,Social media,screenshots/A_result_aois.jpg
+B,20,66,Social media,screenshots/B_result_aois.jpg
+C,18,49,Social media,screenshots/C_result_aois.jpg

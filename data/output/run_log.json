@@ -1,0 +1,79 @@
+{
+  "caveat": "Predicted free-viewing attention from DeepGaze IIE (Linardos et al., 2021). Not real eye-tracking.",
+  "status": "finished",
+  "is_placeholder": false,
+  "study_title": "Promo price position",
+  "run_utc": "2026-11-23T04:06:49+00:00",
+  "run_date": "2026-11-23",
+  "pipeline_version": "0.1.0",
+  "git_commit": "362395741abf6fb60c761ce090d0cad7f608bf1e",
+  "is_git_dirty": true,
+  "model": "DeepGaze IIE",
+  "deepgaze_commit": "c7db17e2d1d7ea6468ffdee2cfaddf141095dcff",
+  "weights_file": "deepgaze2e.pth",
+  "weights_sha256": "49b65724184f43a2b60426c29c12fd2b743b47ad9eb3435d3dd28e50ea4e2585",
+  "device": "cpu",
+  "centerbias_primary": "mit1003 template, resized to the image (nearest), renormalised",
+  "centerbias_sensitivity": "uniform (no centre bias)",
+  "centerbias_file": "centerbias_mit1003.npy",
+  "centerbias_sha256": "051645b7da47884c138e81f28a4afbadd99b6c3262eaf086434a9626e3578be9",
+  "python": "3.13.11",
+  "libraries": {
+    "torch": "2.15.0",
+    "torchvision": "0.29.2",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pillow": "13.0.0",
+    "pydantic": "2.14.2",
+    "deepgaze_pytorch": "1.2.1"
+  },
+  "baseline": "A",
+  "config_sha256": "2a7dce873b4ccf5470be675e614c0923192fdf7b8801ae9c49ef5a91983a8e81",
+  "jitter_pct": 5.0,
+  "jitter_draws": 200,
+  "jitter_seed": 20261122,
+  "product_drop_threshold_pct": 10.0,
+  "images": {
+    "A": {
+      "file": "images/A.png",
+      "width": 1080,
+      "height": 1350,
+      "sha256": "751b50f598a829c44d2802aabc19505fbe83077355e0af58cc4d81f2c964492a"
+    },
+    "B": {
+      "file": "images/B.png",
+      "width": 1080,
+      "height": 1350,
+      "sha256": "5916325bce02fd6bfdb4523e9eefce32f5e4bae2edeb1db9f855ec2b15a3f925"
+    },
+    "C": {
+      "file": "images/C.png",
+      "width": 1080,
+      "height": 1350,
+      "sha256": "a7270e1b696f8cd33bb34df42fd047d76f689630bc3b6cc42738cefac9a15a90"
+    }
+  },
+  "aoi_lock": {
+    "locked_utc": "2026-11-23T03:58:09+00:00",
+    "files": {
+      "A": {
+        "file": "aois/A.json",
+        "sha256": "70995cd1be0038f91da65fe68e2c814c6124413de59d58ac327882bc519de760",
+        "modified_utc": "2026-11-23T03:31:50+00:00"
+      },
+      "B": {
+        "file": "aois/B.json",
+        "sha256": "c61319b35d01573f7db17c217ad8798b2c376654f5556d550d9ca92bab68e2a9",
+        "modified_utc": "2026-11-23T03:31:51+00:00"
+      },
+      "C": {
+        "file": "aois/C.json",
+        "sha256": "7a756121d0c902d299c26eb64d982844d9b7bb4575b02203328bbdbd61f09974",
+        "modified_utc": "2026-11-23T03:31:51+00:00"
+      }
+    }
+  },
+  "aoi_set_sha256": "eedaa17d0a57c0660084b8252ac26ec702c35b7f2ad622fd9b3f1375b9d08cbf",
+  "has_aois_changed_since_a_run": false,
+  "past_runs": []
+}

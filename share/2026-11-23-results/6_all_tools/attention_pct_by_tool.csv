@@ -1,0 +1,23 @@
+tool,aoi,A,B,C,B_minus_A,C_minus_A
+deepgaze_iie (centre bias),price,5.8624,20.0902,11.2154,14.2278,5.353
+deepgaze_iie (centre bias),product,29.554,23.9922,27.1024,-5.5618,-2.4516
+deepgaze_iie (centre bias),logo,1.6684,1.3535,1.5432,-0.3149,-0.1252
+deepgaze_iie (centre bias),headline,12.8229,11.3868,12.9472,-1.4361,0.1243
+deepgaze_iie (centre bias),tagline,29.7276,24.8697,28.0621,-4.8579,-1.6655
+deepgaze_iie (centre bias),rest,20.3647,18.3076,19.1298,-2.0571,-1.2349
+deepgaze_iie (no centre bias),price,13.8549,12.3171,12.5444,-1.5378,-1.3105
+deepgaze_iie (no centre bias),product,14.3441,14.489,14.4685,0.1449,0.1244
+deepgaze_iie (no centre bias),logo,8.984,9.2273,9.2106,0.2433,0.2266
+deepgaze_iie (no centre bias),headline,12.4188,13.6409,13.612,1.2221,1.1932
+deepgaze_iie (no centre bias),tagline,19.8404,20.6883,20.5483,0.8479,0.7079
+deepgaze_iie (no centre bias),rest,30.5577,29.6375,29.6162,-0.9202,-0.9415
+attention_insight,price,6,5,8,-1.0,2.0
+attention_insight,product,24,20,19,-4.0,-5.0
+attention_insight,logo,4,4,4,0.0,0.0
+attention_insight,headline,10,10,9,0.0,-1.0
+attention_insight,tagline,10,10,10,0.0,0.0
+brainsight,price,10,12,13,2.0,3.0
+brainsight,product,28,27,28,-1.0,0.0
+brainsight,logo,4,4,4,0.0,0.0
+brainsight,headline,20,17,16,-3.0,-4.0
+brainsight,tagline,9,10,10,1.0,1.0

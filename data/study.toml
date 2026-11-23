@@ -24,17 +24,18 @@ jitter_seed = 20261122
 centerbias_path = "centerbias_mit1003.npy"
 
 # Tools whose numbers are exported by hand; each gets empty rows in cross_tool_long.csv.
-# Edit the names, metrics and scales to match what each tool actually exports.
+# Names, metrics and scales follow what each tool exported (see external/README.md).
 [[external_tools]]
 name = "attention_insight"
 metrics = [
-  { metric = "attention_pct", level = "aoi", scale = "0-100 % of attention" },
-  { metric = "clarity_score", level = "image", scale = "0-100" },
+  { metric = "attention_pct", level = "aoi", scale = "0-100 % of attention, whole percent" },
+  { metric = "visual_performance_score", level = "image", scale = "0-100" },
 ]
 
 [[external_tools]]
-name = "neurons_predict"
+name = "brainsight"
 metrics = [
-  { metric = "attention_pct", level = "aoi", scale = "0-100 % of attention" },
+  { metric = "attention_pct", level = "aoi", scale = "0-100 % of attention, whole percent" },
+  { metric = "attention_score", level = "image", scale = "0-100" },
   { metric = "clarity_score", level = "image", scale = "0-100" },
 ]

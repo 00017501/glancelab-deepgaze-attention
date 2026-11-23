@@ -164,3 +164,19 @@ boxes, product and headline within 2 px, tagline within 3 px except a 6 px lower
 of this is far inside the 5% jitter range.
 **Effect.** The adopted AOI files are unchanged: four boxes from the earlier prompt, tagline by
 hand. The trial runs are kept as evidence and were not adopted.
+
+### D17 – Commercial tools: which ones, their settings, and how AOIs map (2026-11-23)
+
+**Decision.** The cross-tool table carries DeepGaze IIE, Attention Insight and Brainsight. A third
+commercial tool was tried and returned no results, so it is not part of the study.
+**Settings.** Attention Insight: Advertising, channel Social Ads, objective Product Highlight.
+Brainsight: type Social media. The clean images were uploaded; the locked AOIs (D15) were drawn by
+mouse and read back from the page, every edge within 2 px.
+**Mapping.** Attention Insight labels: Product Visual = `product`, Price = `price`, Product Name =
+`headline`, Slogan = `tagline`, Logo = `logo`. Brainsight numbers boxes in drawing order: price,
+product, logo, headline, tagline.
+**Limits.** Both tools report whole percentages. Brainsight has no AOI data export, so its values
+are typed from screenshots. Attention Insight's area percentages are not simple shares of one
+total (its own summary total differs from their sum), and neither tool reports `rest`.
+**Effect.** `external_tools` in the study file now names these two tools and the metrics they
+export. No DeepGaze metric, threshold or output changed.

@@ -1,0 +1,6 @@
+Analysis Name,Text,Value,Benchmark Name,Benchmark Description,Benchmark Indicator,X,Y,Width,Height,Size
+"C redraw","Price",0.08,"At or above benchmark","At or above benchmark. Predicted attention: about 8%. Benchmark: about 8%. Same channel across goals. Benchmark only — no visibility points lost.",green,65.46667,74.84009,30.26667,8.10235,2.45231
+"C redraw","Product Visual",0.19,"Below benchmark","Below benchmark. Predicted attention: about 19%. Benchmark: about 28%. Same channel and goal. Below visibility target.",amber,13.7224,13.63636,38.4858,72.9798,28.08686
+"C redraw","Logo",0.04,"Below benchmark","Below benchmark. Predicted attention: about 4%. Benchmark: about 10%. Same channel and goal. Benchmark only — no visibility points lost.",amber,4.93333,3.09168,18.4,5.22388,0.96119
+"C redraw","Product Name",0.09,"Below benchmark","Below benchmark. Predicted attention: about 9%. Benchmark: about 20%. Same channel across goals. Benchmark only — no visibility points lost.",amber,65.33333,15.03198,17.6,8.20896,1.44478
+"C redraw","Slogan",0.1,"Below benchmark","Below benchmark. Predicted attention: about 10%. Benchmark: about 17%. Same channel across goals. Benchmark only — no visibility points lost.",amber,65.06667,27.71855,20.93333,8.31557,1.74073

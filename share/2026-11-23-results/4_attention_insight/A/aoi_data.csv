@@ -1,0 +1,6 @@
+Analysis Name,Text,Value,Benchmark Name,Benchmark Description,Benchmark Indicator,X,Y,Width,Height,Size
+"A","Logo",0.04,"Below benchmark","Below benchmark. Predicted attention: about 4%. Benchmark: about 10%. Same channel and goal. Benchmark only — no visibility points lost.",amber,4.93333,3.09168,18.4,5.22388,0.96119
+"A","Slogan",0.1,"Below benchmark","Below benchmark. Predicted attention: about 10%. Benchmark: about 17%. Same channel across goals. Benchmark only — no visibility points lost.",amber,65.06667,27.71855,20.93333,8.31557,1.74073
+"A","Product Name",0.1,"Below benchmark","Below benchmark. Predicted attention: about 10%. Benchmark: about 20%. Same channel across goals. Benchmark only — no visibility points lost.",amber,65.33333,15.03198,17.6,8.20896,1.44478
+"A","Price",0.06,"Below benchmark","Below benchmark. Predicted attention: about 6%. Benchmark: about 8%. Same channel across goals. Benchmark only — no visibility points lost.",amber,65.46667,3.73134,30.26667,8.20896,2.48458
+"A","Product Visual",0.24,"Below benchmark","Below benchmark. Predicted attention: about 24%. Benchmark: about 28%. Same channel and goal. Below visibility target.",amber,13.7224,13.63636,38.4858,72.9798,28.08686
