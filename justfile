@@ -4,6 +4,9 @@
 #   just run examples/placeholder
 # All outputs are predicted attention from DeepGaze IIE, not real eye-tracking.
 
+# Read a git-ignored .env, if present, so the AOI recipes can find ANTHROPIC_API_KEY.
+set dotenv-load
+
 py := ".venv/bin/python -m src.glance_attention"
 
 # List the recipes

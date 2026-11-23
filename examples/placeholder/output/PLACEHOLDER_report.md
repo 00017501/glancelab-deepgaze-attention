@@ -6,9 +6,9 @@ _Predicted free-viewing attention from DeepGaze IIE (Linardos et al., 2021). Not
 
 ## Run
 
-- Run date (UTC): 2026-11-21T20:06:12+00:00
+- Run date (UTC): 2026-11-23T03:39:19+00:00
 - Model: DeepGaze IIE, DeepGaze commit `c7db17e`, device `cpu`
-- Pipeline: version 0.1.0, commit `a22b527`
+- Pipeline: version 0.1.0, commit `69f0b03` (uncommitted changes present)
 - Images: 3 variants, 1080 x 1350 px; baseline `A`
 - AOIs locked (UTC): 2026-11-21T19:59:47+00:00, before this model run
 

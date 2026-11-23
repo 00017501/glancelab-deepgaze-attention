@@ -1,0 +1,60 @@
+{
+  "image": "A.png",
+  "aois": {
+    "price": {
+      "type": "price",
+      "boxes": [
+        [
+          708,
+          50,
+          1033,
+          161
+        ]
+      ]
+    },
+    "product": {
+      "type": "product",
+      "boxes": [
+        [
+          148,
+          184,
+          565,
+          1172
+        ]
+      ]
+    },
+    "logo": {
+      "type": "logo",
+      "boxes": [
+        [
+          54,
+          42,
+          251,
+          111
+        ]
+      ]
+    },
+    "headline": {
+      "type": "headline",
+      "boxes": [
+        [
+          703,
+          203,
+          896,
+          315
+        ]
+      ]
+    },
+    "tagline": {
+      "type": "text",
+      "boxes": [
+        [
+          703,
+          373,
+          930,
+          492
+        ]
+      ]
+    }
+  }
+}

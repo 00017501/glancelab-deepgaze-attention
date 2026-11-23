@@ -136,3 +136,31 @@ noticed; the price should be made more noticeable whatever the baseline; or vers
 see which is best. It is none of the first two, and the third only in a structured form: versions,
 AOIs and the product threshold are fixed before the model runs (D5, D7).
 **Effect.** Wording only. No metric, threshold or output changes.
+
+### D15 – AOI set for the real ad: tight product box, title and tagline separate (2026-11-23)
+
+**Decision.** Five fixed-or-moving AOIs: `price` (the tag, moving), `product` (the bookcase only,
+not the photo around it), `logo`, `headline` (product name and category line) and `tagline` (type
+`text`, the two-sentence line under the rule). Everything else, including the photo background and
+the disclaimer, is `rest`.
+**Alternative considered.** A group member's earlier annotation, drawn on a previous export of the
+ad, used the whole photo panel as the product and one "Text" box for name, rule and tagline.
+**Why.** The photo panel is about half the image and mostly empty wall, so its share reflects the
+centre of the image more than the product. Name and tagline are split because the tag sits beside
+the name in one version and beside the tagline in another; the two shares can still be added to
+compare with a single text box.
+**Effect.** `tagline` was added by hand to the baseline proposal (measured from the text's pixel
+extent); the other boxes are the AI proposal unchanged. Fixed before any model run (D5).
+
+### D16 – The annotation prompt asks for the tagline too (2026-11-23)
+
+**Decision.** The AOI prompt now names five elements (adding `tagline`, type `text`), describes
+`headline` as the product name and category line, and tells the model to leave out divider lines
+and small print.
+**Why.** The adopted set (D15) had a hand-added tagline box, so the published prompt could not
+reproduce it. With the extended prompt, anyone can regenerate the full set from the clean images.
+**Check.** Two runs per variant with the extended prompt: price and logo identical to the adopted
+boxes, product and headline within 2 px, tagline within 3 px except a 6 px lower bottom edge. All
+of this is far inside the 5% jitter range.
+**Effect.** The adopted AOI files are unchanged: four boxes from the earlier prompt, tagline by
+hand. The trial runs are kept as evidence and were not adopted.

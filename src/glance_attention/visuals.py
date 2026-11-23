@@ -26,8 +26,8 @@ TYPE_COLOURS: dict[AoiType, tuple[int, int, int]] = {
     AoiType.PRICE: (255, 230, 0),
     AoiType.PRODUCT: (0, 255, 120),
     AoiType.LOGO: (0, 200, 255),
-    AoiType.HEADLINE: (255, 255, 255),
-    AoiType.TEXT: (180, 180, 180),
+    AoiType.HEADLINE: (200, 70, 255),
+    AoiType.TEXT: (255, 140, 0),
     AoiType.VISUAL: (160, 120, 255),
 }
 # Bold fonts tried in order; the names cover Linux, Windows and macOS.
@@ -79,7 +79,7 @@ def aoi_overlay(image: Image.Image, aois: dict[str, Aoi], labels: dict[str, str]
     """Draw each AOI's boxes and its label on a copy of the image."""
     canvas = image.copy()
     draw = ImageDraw.Draw(canvas)
-    font = load_font(max(16, canvas.width // 40))
+    font = load_font(max(12, canvas.width // 56))
     for name, aoi in aois.items():
         colour = TYPE_COLOURS.get(aoi.type, (255, 255, 255))
         for box in aoi.boxes:

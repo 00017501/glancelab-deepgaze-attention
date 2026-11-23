@@ -6,13 +6,16 @@ in image pixel coordinates [x0, y0, x1, y1] (x0,y0 = top-left; x1,y1 = bottom-ri
 - price: the promotional price tag (the price figure with its own badge, panel or sticker)
 - product: the main product being advertised (the whole object, not the room around it)
 - logo: the brand logo or wordmark
-- headline: the main title text
+- headline: the main title text (the product name and any category line directly under it)
+- tagline: the supporting slogan or short body copy that goes with the headline
 
 Rules:
-1. Name the four AOIs exactly "price", "product", "logo" and "headline", with the matching type.
+1. Name the AOIs exactly "price", "product", "logo", "headline" and "tagline". The type matches
+   the name, except "tagline", whose type is "text".
 2. Omit any element that is not in the image. Do not invent one.
-3. The product, logo and headline rectangles must not overlap each other. If two touch, split
-   the boundary between them. The price rectangle may overlap another element when the price
-   tag really sits on top of it.
+3. The product, logo, headline and tagline rectangles must not overlap each other. If two touch,
+   split the boundary between them. The price rectangle may overlap another element when the
+   price tag really sits on top of it.
 4. Include a text element's own background panel or banner, but not empty space around it.
 5. Use one rectangle per AOI unless the element is clearly in separate pieces.
+6. Leave out divider lines, disclaimers and other small print; they belong to no AOI.

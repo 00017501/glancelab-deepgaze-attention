@@ -84,7 +84,7 @@ def _aoi(study: Study, args: argparse.Namespace) -> None:
         apply_proposal(study, variant, args.staging / f"{study.root.name}__{variant.name}.json")
         return
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        raise SystemExit("ANTHROPIC_API_KEY is not set; export it in your own terminal first")
+        raise SystemExit("ANTHROPIC_API_KEY is not set; export it in your terminal or put it in .env")
     key = f"{study.root.name}__{variant.name}"
     annotate(
         f"anthropic:{args.model}", AnnotationRequest(key, variant.image_path, args.prompt, args.effort), args.staging

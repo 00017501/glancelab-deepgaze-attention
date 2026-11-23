@@ -75,22 +75,37 @@ in image pixel coordinates [x0, y0, x1, y1] (x0,y0 = top-left; x1,y1 = bottom-ri
 - price: the promotional price tag (the price figure with its own badge, panel or sticker)
 - product: the main product being advertised (the whole object, not the room around it)
 - logo: the brand logo or wordmark
-- headline: the main title text
+- headline: the main title text (the product name and any category line directly under it)
+- tagline: the supporting slogan or short body copy that goes with the headline
 
 Rules:
-1. Name the four AOIs exactly "price", "product", "logo" and "headline", with the matching type.
+1. Name the AOIs exactly "price", "product", "logo", "headline" and "tagline". The type matches
+   the name, except "tagline", whose type is "text".
 2. Omit any element that is not in the image. Do not invent one.
-3. The product, logo and headline rectangles must not overlap each other. If two touch, split
-   the boundary between them. The price rectangle may overlap another element when the price
-   tag really sits on top of it.
+3. The product, logo, headline and tagline rectangles must not overlap each other. If two touch,
+   split the boundary between them. The price rectangle may overlap another element when the
+   price tag really sits on top of it.
 4. Include a text element's own background panel or banner, but not empty space around it.
 5. Use one rectangle per AOI unless the element is clearly in separate pieces.
+6. Leave out divider lines, disclaimers and other small print; they belong to no AOI.
 ```
 
 ### 2c. Log of proposals
 
-None yet: the real ads do not exist. Add one line per proposal here (date, variant, model used,
-request ID, what the reviewer changed) when they are made.
+One line per proposal: date, variant, model used, request ID, what the reviewer changed.
+
+The three proposals below were made with the earlier four-AOI prompt, which each record in
+`provenance/aois/` stores in full. The prompt in 2b was then extended with `tagline` and rule 6, so
+that it yields the whole adopted set on its own (D16). Two trial runs of the extended prompt on each
+variant are kept in `provenance/aois/regeneration_check/`; they were not adopted. Against the adopted
+files: price and logo identical in all six runs, product and headline within 2 px on every edge,
+tagline within 3 px except its bottom edge, which the model put 6 px lower.
+
+| Date | Variant | Model used | Request ID | Reviewer's changes |
+|---|---|---|---|---|
+| 2026-11-23 | A | `claude-opus-5-5` | `msg_011ChK9Q5zLy6tbwVPNKs3dH` | Applied. `tagline` box `[703, 375, 928, 486]` (type `text`) added by hand from the text's pixel extent (D15); the four proposed boxes unchanged |
+| 2026-11-23 | B | `claude-opus-5-5` | `msg_011ChK9RJgcTqsWGg5oBRUC1` | Applied. Only the price box is taken from this proposal, unchanged; the fixed AOIs are copied from A |
+| 2026-11-23 | C | `claude-opus-5-5` | `msg_011ChK9RdJ38srVpi9GurSUG` | Applied. Only the price box is taken from this proposal, unchanged; the fixed AOIs are copied from A |
 
 ## 3. Later AI-assisted changes
 
@@ -103,3 +118,6 @@ recorded as one entry.
 | 2026-11-22 | Make the pipeline's commands shorter to type | Claude Code (`claude-fable-5-2`) wrote `justfile`, which only wraps the existing commands, and updated the command examples in the docs. No pipeline code, metric or output changed | To be recorded here by the student when reviewed |
 | 2026-11-22 | Make the documentation easier to follow: show what each step produces, add example images, give setup steps for each operating system, and tidy the README for reading on GitHub | Claude Code (`claude-fable-5-2`) rewrote `docs/ANALYSIS_GUIDE.md` as a step-by-step guide with the placeholder images and table excerpts, rewrote `README.md` as a short overview, and wrote `docs/SETUP.md`. The Linux and Windows steps were written from the setup script and not run. Documentation only | To be recorded here by the student when reviewed |
 | 2026-11-22 | Make clearer what the study does and does not claim, after a group member asked which of three readings was meant | Claude Code (`claude-fable-5-2`) reworded the research-question framing in `README.md` and `docs/METHOD.md` (section 0) and added D14 to `docs/DECISIONS.md`. Wording only; no metric or output changed | To be recorded here by the student when reviewed |
+| 2026-11-23 | Let the API key for AOI proposals be kept in a local file | Claude Code (`claude-fable-5-2`) added a git-ignored `.env` that `just` reads, and updated `docs/AOI_GENERATION.md`. The key is never written by the pipeline or committed | To be recorded here by the student when reviewed |
+| 2026-11-23 | Make the AOI labels on the preview and heatmap pictures smaller and easier to tell apart | Claude Code (`claude-fable-5-2`) reduced the label size and changed the headline and text box colours in `visuals.py`. Labels are drawn on output pictures only, never on the image the model sees; the placeholder CSV values are unchanged | To be recorded here by the student when reviewed |
+| 2026-11-23 | Make the published annotation prompt able to reproduce the adopted AOI set on its own | Claude Code (`claude-fable-5-2`) added the `tagline` element and a rule about small print to the prompt (2b), ran it twice per variant to compare with the adopted boxes, kept those runs in `provenance/aois/regeneration_check/`, and added D16. The adopted AOI files were not changed | To be recorded here by the student when reviewed |

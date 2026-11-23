@@ -30,7 +30,9 @@ One file per variant, `aois/<variant>.json`:
 
 ## Steps for the real ads (AI proposes, a person confirms)
 
-1. Export `ANTHROPIC_API_KEY` in your own terminal. It is never written to any file.
+1. Export `ANTHROPIC_API_KEY` in your own terminal, or put `ANTHROPIC_API_KEY=<key>` in a `.env`
+   file in the repository root: `just` reads it and git ignores it. The pipeline never writes the
+   key to any file, and `.env` must never be committed.
 2. Baseline first:
    ```bash
    just aoi-propose A
@@ -44,7 +46,7 @@ One file per variant, `aois/<variant>.json`:
    just aoi-apply A
    ```
 5. Repeat `propose` and `apply` for each other variant. For these, `apply` takes **only the price
-   box** from the proposal and copies product, logo and headline from the baseline's file.
+   box** from the proposal and copies every other AOI from the baseline's file.
 6. `just preview`, and check every image in `data/output/preview/`.
 7. `just validate` locks the files. Commit.
 

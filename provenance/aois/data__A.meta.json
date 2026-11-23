@@ -1,0 +1,83 @@
+{
+  "key": "data__A",
+  "created_utc": "2026-11-23T03:25:12+00:00",
+  "model_requested": "anthropic:claude-opus-5-5",
+  "model_used": "claude-opus-5-5",
+  "effort": "high",
+  "sdk_versions": {
+    "pydantic-ai-slim": "2.64.0",
+    "anthropic": "2.3.0"
+  },
+  "prompt_file": "annotation.txt",
+  "prompt_sha256": "902e1ef7961f8fcd0f585c42a0c64f6819447e96192cc12e1a19bebf40f71e73",
+  "prompt_text": "You are annotating areas of interest (AOIs) on a static retail advertisement for an\nattention study. The image is 1080 x 1350 pixels.\n\nFind each of these elements if present, and give a tight bounding rectangle for each\nin image pixel coordinates [x0, y0, x1, y1] (x0,y0 = top-left; x1,y1 = bottom-right):\n- price: the promotional price tag (the price figure with its own badge, panel or sticker)\n- product: the main product being advertised (the whole object, not the room around it)\n- logo: the brand logo or wordmark\n- headline: the main title text\n\nRules:\n1. Name the four AOIs exactly \"price\", \"product\", \"logo\" and \"headline\", with the matching type.\n2. Omit any element that is not in the image. Do not invent one.\n3. The product, logo and headline rectangles must not overlap each other. If two touch, split\n   the boundary between them. The price rectangle may overlap another element when the price\n   tag really sits on top of it.\n4. Include a text element's own background panel or banner, but not empty space around it.\n5. Use one rectangle per AOI unless the element is clearly in separate pieces.\n",
+  "image": "A.png",
+  "image_sha256": "751b50f598a829c44d2802aabc19505fbe83077355e0af58cc4d81f2c964492a",
+  "original_size": [
+    1080,
+    1350
+  ],
+  "sent_size": [
+    1080,
+    1350
+  ],
+  "scale": 1.0,
+  "request_id": "msg_011ChK9Q5zLy6tbwVPNKs3dH",
+  "usage": {
+    "input_tokens": 2963,
+    "output_tokens": 192
+  },
+  "raw_reply": {
+    "aois": [
+      {
+        "name": "price",
+        "type": "price",
+        "boxes": [
+          {
+            "x0": 708,
+            "y0": 50,
+            "x1": 1033,
+            "y1": 161
+          }
+        ]
+      },
+      {
+        "name": "product",
+        "type": "product",
+        "boxes": [
+          {
+            "x0": 149,
+            "y0": 184,
+            "x1": 564,
+            "y1": 1171
+          }
+        ]
+      },
+      {
+        "name": "logo",
+        "type": "logo",
+        "boxes": [
+          {
+            "x0": 54,
+            "y0": 42,
+            "x1": 251,
+            "y1": 111
+          }
+        ]
+      },
+      {
+        "name": "headline",
+        "type": "headline",
+        "boxes": [
+          {
+            "x0": 704,
+            "y0": 204,
+            "x1": 896,
+            "y1": 314
+          }
+        ]
+      }
+    ]
+  },
+  "problems": []
+}
