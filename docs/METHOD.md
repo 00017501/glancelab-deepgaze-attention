@@ -45,6 +45,32 @@ positions (D3). Their outputs are marked **PLACEHOLDER – not results**.
 - The model's log-density is exponentiated and normalised to sum to 1. Each pixel then holds a share
   of predicted attention.
 
+### The centre bias and MIT1003, in plain terms
+
+- **Saliency model.** DeepGaze IIE looks at an image and estimates, for every pixel, how likely a
+  viewer is to look there. It was trained on recordings of where real people looked at other images.
+- **Centre bias.** Across almost any set of pictures, people look at the middle more than the
+  edges, whatever is shown: photographers centre their subject, and eyes start from the middle of
+  a screen. A saliency model has to account for this to match real viewing.
+- **Prior.** DeepGaze takes this tendency as a separate input, called a prior: a map saying how
+  likely each position is to be looked at before the image content is considered. The model
+  combines it with what it finds in the image.
+- **MIT1003.** A public eye-tracking dataset of 1003 images, each viewed freely for three seconds
+  by 15 people (Judd et al., 2009). The prior used here is the average of where those viewers
+  looked across the whole dataset, published with DeepGaze as `centerbias_mit1003.npy`. It is
+  densest in the middle and fades towards the edges.
+- **Uniform prior.** A flat map: every position equally likely. Using it removes the centre bias,
+  so what remains is the model's response to the image content alone.
+
+Why both are reported: this study moves one element to different positions. With the MIT1003
+prior, an element nearer the middle gains predicted attention simply for being there. Comparing the
+two sets separates "this position sits where people tend to look" from "this element stands out
+more". Neither is the true answer. The MIT1003 set is closer to how people view images in general;
+the uniform set shows how much of a result depends on that general tendency.
+
+Reference: Judd, T., Ehinger, K., Durand, F. and Torralba, A. (2009) 'Learning to predict where
+humans look', *IEEE 12th International Conference on Computer Vision*, pp. 2106-2113.
+
 ## 3. AOIs
 
 - One AOI file per variant, `aois/<variant>.json`. Boxes are `[x0, y0, x1, y1]` in image pixels.
