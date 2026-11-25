@@ -2,9 +2,9 @@
 
 # Where should the promo price go?
 
-Predicted attention for versions of one furniture ad that differ only in where the price tag sits
+Predicted attention for three versions of one furniture ad that differ only in where the price tag sits, compared across three attention models
 
-[What you get](#what-you-get) · [Set it up](#set-it-up) · [Use it](#use-it) · [What is where](#what-is-where) · [Documents](#documents)
+[The ads](#the-ads) · [Results](#results) · [The three models](#the-three-models) · [Run it yourself](#run-it-yourself) · [Documents](#documents)
 
 </div>
 
@@ -19,108 +19,111 @@ Predicted attention for versions of one furniture ad that differ only in where t
 </table>
 
 > [!WARNING]
-> **Predicted attention, not real eye-tracking.** Every number and heatmap here comes from a model (DeepGaze IIE). It says nothing about memory or about real viewers.
+> **Predicted attention, not real eye-tracking.** Every number and heatmap here comes from an AI model. No one was shown these ads, and nothing here says anything about memory or real viewers.
 
-> [!NOTE]
-> **No results yet.** The real ads do not exist yet. Every picture on this page is from grey-box placeholder images, marked **PLACEHOLDER – not results**.
+This repository does two things:
 
-## The idea
+1. **Runs DeepGaze IIE**, a free research model, on the ad versions and measures the share of predicted attention in each area of the ad.
+2. **Compares that with two commercial tools**, Attention Insight and Brainsight, given the same images and the same areas.
 
-| | |
-|---|---|
-| **What we test** | Several versions of one ad, identical except for the position of the price tag |
-| **The baseline** | Version A, with the price in the usual place. Every other version is compared with it |
-| **What counts as better** | The price gets more attention **and** the product keeps its share. A price that pulls attention off the product is a bad result |
-| **The tool** | DeepGaze IIE, a free research model that predicts where people are likely to look at an image |
-| **Where it fits** | One of three attention tools in a group coursework (CW2). All three feed one shared table |
+It supports a group coursework report (CW2).
 
-**Read more →** [what the study does and does not claim](docs/METHOD.md) · [why each choice was made](docs/DECISIONS.md)
+## The ads
 
----
+One ad for a bookcase. Only the yellow price tag moves: top right (A, the baseline), middle right (B) or bottom right (C).
 
-## What you get
+| A (baseline) | B | C |
+|:---:|:---:|:---:|
+| <img src="data/images/A.png" width="230" alt="Version A: price tag top right"> | <img src="data/images/B.png" width="230" alt="Version B: price tag middle right"> | <img src="data/images/C.png" width="230" alt="Version C: price tag bottom right"> |
 
-### 1. All versions side by side
+Five areas are measured in every version: price, product, logo, headline and tagline. They were locked before any model ran, so no box could be adjusted to suit a result.
 
-Brighter means more predicted attention. Each box shows its share of it.
+<img src="data/output/preview/B_aois.png" width="230" alt="Version B with the five measured areas drawn on it">
 
-![Placeholder panel: versions A, B and C side by side with boxes and shares](examples/placeholder/output/PLACEHOLDER_panel.png)
-
-### 2. Each version, step by step
-
-<table>
-  <tr>
-    <th align="center">Image</th>
-    <th align="center">Areas to measure</th>
-    <th align="center">Heatmap</th>
-    <th align="center">Share per area</th>
-  </tr>
-  <tr>
-    <td><img src="examples/placeholder/images/C.png" width="200" alt="Placeholder version C"></td>
-    <td><img src="examples/placeholder/output/preview/PLACEHOLDER_C_aois.png" width="200" alt="Boxes drawn on placeholder version C"></td>
-    <td><img src="examples/placeholder/output/heatmaps/PLACEHOLDER_C_heatmap.png" width="200" alt="Predicted heatmap for placeholder version C"></td>
-    <td><img src="examples/placeholder/output/heatmaps/PLACEHOLDER_C_aoi.png" width="200" alt="Heatmap with boxes and shares for placeholder version C"></td>
-  </tr>
-</table>
-
-### 3. The answer, version by version
-
-| Version | Price share | Change vs A | Product change vs A | Verdict |
-|:---:|---:|---:|---:|---|
-| **B** | 15.4% | −0.7 points | +2.8% | price not up; product held |
-| **C** | 37.9% | +21.8 points | −3.0% | **price up; product held** |
-
-<sub>Placeholder values, not results.</sub>
-
-It also writes the tables behind these, a written summary, and the shared table for all three tools.
-
-**Read more →** [every output explained, with examples](docs/ANALYSIS_GUIDE.md) · [how each number is calculated](docs/METHOD.md)
+**Read more →** [the ad versions](results/2026-11-23/1_ads/README.md) · [the measured areas](results/2026-11-23/2_aois/README.md)
 
 ---
 
-## Set it up
+## Results
 
-**You need:** Python 3.13, git and [`just`](https://github.com/casey/just), a small tool that gives the commands short names.
+### The short answer
 
-| System | What to do first |
-|---|---|
-| **macOS** | `brew install just python@3.13` |
-| **Linux** | Install Python 3.13, git and `just` with your package manager |
-| **Windows** | Install WSL (`wsl --install` in PowerShell), open Ubuntu, then follow the Linux steps inside it |
+- **C is the only version where the price gains predicted attention in all three models.**
+- **B gains the most in DeepGaze but fails the test**: the product loses about a fifth of its attention.
+- **The models disagree on the product.** Brainsight says it holds, Attention Insight says it drops in both B and C, DeepGaze says it drops only in B.
+- **The DeepGaze gain depends on its centre bias.** With the bias switched off, neither B nor C beats A.
 
-**Then, on any system:**
+The evidence leans towards C, and it is not strong.
+
+### Heatmaps from the three models
+
+Each row is one model, each column one version. Warmer means more predicted attention. Each model has its own colour scale, so compare along a row, not down a column.
+
+![Predicted-attention heatmaps from DeepGaze IIE, Attention Insight and Brainsight for versions A, B and C](results/2026-11-23/6_all_tools/heatmaps_by_tool.png)
+
+### The numbers
+
+Share of predicted attention, in %. A version passes when the price share goes up **and** the product keeps at least 90% of its share in A.
+
+| Model | Price A / B / C | Product A / B / C | B passes? | C passes? |
+|---|:---:|:---:|---|---|
+| **DeepGaze IIE** | 5.9 / 20.1 / 11.2 | 29.6 / 24.0 / 27.1 | no: price up, product −19% | **yes**: price up, product −8% |
+| **Attention Insight** | 6 / 5 / 8 | 24 / 20 / 19 | no: price not up, product −17% | no: price up, product −21% |
+| **Brainsight** | 10 / 12 / 13 | 28 / 27 / 28 | **yes**: price up, product −4% | **yes**: price up, product 0% |
+
+<sub>Predicted values, not eye-tracking. The commercial tools report whole percentages, so a change of 1 to 3 points is weak evidence.</sub>
+
+**Read more →** [all results, folder by folder](results/2026-11-23/README.md) · [every area in every model](results/2026-11-23/6_all_tools/README.md)
+
+---
+
+## The three models
+
+| Model | Type | What it adds | Its guide |
+|---|---|---|---|
+| **DeepGaze IIE** | Open-source, peer-reviewed | Exact values, and a centre bias that can be switched off | [3_deepgaze](results/2026-11-23/3_deepgaze/README.md) |
+| **Attention Insight** | Commercial | Widely used for ad pre-testing | [4_attention_insight](results/2026-11-23/4_attention_insight/README.md) |
+| **Brainsight** | Commercial | A predicted viewing order | [5_brainsight](results/2026-11-23/5_brainsight/README.md) |
+
+When reading across models:
+
+- **Compare directions, not values.** Each model scales attention its own way.
+- **Within one model, compare versions.** That is what the design supports.
+
+The DeepGaze panel below shows each area's share on the heatmap, with the centre bias on.
+
+![DeepGaze IIE panel: versions A, B and C side by side with measured areas and their shares](data/output/panel.png)
+
+**Read more →** [how each number is calculated, and the limits](docs/METHOD.md) · [why each choice was made](docs/DECISIONS.md)
+
+---
+
+## Run it yourself
+
+**You need:** Python 3.13, git and [`just`](https://github.com/casey/just). On macOS: `brew install just python@3.13`. Other systems: [setup guide](docs/SETUP.md).
 
 ```bash
 git clone https://github.com/00017501/glancelab-deepgaze-attention.git
 cd glancelab-deepgaze-attention
 just setup    # installs everything; takes a few minutes
-just demo     # runs the whole thing on the placeholder images
+just demo     # runs the whole flow on grey-box placeholder images
 ```
 
-> [!NOTE]
-> The first run downloads the model (about 1 GB). It has been run on macOS only so far.
+The first run downloads the model (about 1 GB). It has been run on macOS only so far.
 
-**Read more →** [setup step by step for each system](docs/SETUP.md)
-
----
-
-## Use it
+To rerun the real study in `data/`:
 
 | Step | Command | What it does |
 |:---:|---|---|
 | 1 | `just preview` | Draws the measured areas on each image so you can check them |
 | 2 | `just validate` | Checks the images and areas, then locks the areas |
-| 3 | `just run` | Runs the model and makes the heatmaps and tables |
+| 3 | `just run` | Runs DeepGaze and makes the heatmaps and tables |
 | 4 | `just compare` | Compares every version with the baseline |
-| 5 | `just report` | Writes the summary and the shared table |
-| – | `just demo` | Does all of the above on the placeholder images |
+| 5 | `just report` | Writes the summary and the cross-model table |
 
-`just` on its own lists every command.
+The commercial tools are web services, so their results were collected by hand and saved in `data/external/`.
 
-> [!IMPORTANT]
-> The areas are locked in step 2, before the model runs. No box can be adjusted after a heatmap has been seen.
-
-**Read more →** [using it on the real ads, step by step](docs/ANALYSIS_GUIDE.md) · [making the area files](docs/AOI_GENERATION.md)
+**Read more →** [the analysis, step by step](docs/ANALYSIS_GUIDE.md) · [making the area files](docs/AOI_GENERATION.md)
 
 ---
 
@@ -128,15 +131,11 @@ just demo     # runs the whole thing on the placeholder images
 
 | Folder | What is in it |
 |---|---|
-| `data/` | The real study: put the ad images and area files here |
-| `examples/placeholder/` | The placeholder study and its example outputs |
+| `results/2026-11-23/` | The results in one readable folder, with a guide per model |
+| `data/` | The real study: ad images, area files, DeepGaze outputs, and the commercial tools' exports in `external/` |
+| `examples/placeholder/` | A placeholder study, every output marked PLACEHOLDER |
 | `docs/` | The guides and the method |
-| `updates/` | Status updates for the group |
 | `src/`, `tests/` | The code and its tests |
-
-Results land in an `output/` folder inside the study: `data/output/` for the real ads.
-
-**Read more →** [which file comes from which step](docs/ANALYSIS_GUIDE.md#where-everything-ends-up)
 
 ---
 
@@ -144,11 +143,12 @@ Results land in an `output/` folder inside the study: `data/output/` for the rea
 
 | Document | Read it when you want to |
 |---|---|
-| [Setup](docs/SETUP.md) | Install it on macOS, Linux or Windows |
-| [Analysis guide](docs/ANALYSIS_GUIDE.md) | Run the real ads, and see what every step produces |
-| [AOI generation](docs/AOI_GENERATION.md) | Make the files that say which areas are measured |
+| [Results](results/2026-11-23/README.md) | See what the three models say, with the evidence |
 | [Method](docs/METHOD.md) | Know how each number is calculated, and the limits |
 | [Decisions](docs/DECISIONS.md) | Know why each choice was made |
+| [Analysis guide](docs/ANALYSIS_GUIDE.md) | Run the study and see what every step produces |
+| [AOI generation](docs/AOI_GENERATION.md) | Make the files that say which areas are measured |
+| [Setup](docs/SETUP.md) | Install it on macOS, Linux or Windows |
 | [AI use and prompts](docs/AI_USE_AND_PROMPTS.md) | See which steps were AI-assisted, and how |
 
 ---
