@@ -7,3 +7,6 @@ __pycache__/
 .ruff_cache/
 .pytest_cache/
 .env
+
+# Status updates for the group: kept locally only.
+updates/
